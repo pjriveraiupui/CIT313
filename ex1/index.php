@@ -1,18 +1,24 @@
 <?php
 
-	include("../_includes/config.php");
+	include("_includes/config.php");
 
 
 ?>
 <?php
-$pref = array("Patrick", "Blue", "John Wick", "The Last Wish", "YouTube");
+$pref = array("Patrick Rivera", "Blue", "John Wick", "The Last Wish", "YouTube");
 
-echo "<h1>" . $pref[0] . "/<h1>";
+echo "<h1> $pref[0] </h1>";
 
 
-foreach ($pref as $value) {
-  echo "$value <br>";
 
+$firstElement = true;
+
+foreach($pref as $val) {
+  if($firstElement) {
+    $firstElement = false;
+  } else {
+    echo "<ul> $val\n </ul>";
+  }
 }
 
 ?>
