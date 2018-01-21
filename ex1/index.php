@@ -5,7 +5,7 @@
 
 ?>
 <?php
-$pref = array("Patrick Rivera", "Blue", "John Wick", "The Last Wish", "YouTube");
+$pref = array("Patrick Rivera", "Blue", "John Wick", "The Time of Contempt", "YouTube");
 
 echo "<h1> $pref[0] </h1>";
 
@@ -17,7 +17,7 @@ foreach($pref as $val) {
   if($firstElement) {
     $firstElement = false;
   } else {
-    echo "<ul> $val\n </ul>";
+    echo "<ul><li> $val\n </li></ul>";
   }
 }
 
