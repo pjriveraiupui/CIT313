@@ -36,6 +36,5 @@ echo "Static Method Result: $add";
 <input type='submit' name='Submit' value='Submit' />
 
 </form>
-
 </body>
 </html>
