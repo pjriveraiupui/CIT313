@@ -20,7 +20,6 @@ class Comments extends Model{
   function deleteComment($commentID){
   $sql='DELETE from comments WHERE commentID=?';
   $this->db->execute($sql, array($commentID));
-  $message = 'Comment Removed';
   return $message;
   }
 }
