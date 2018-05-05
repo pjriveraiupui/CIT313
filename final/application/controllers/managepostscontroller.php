@@ -4,7 +4,7 @@ class ManagePostsController extends Controller{
 
 	public $postObject;
 
-	protected $access = 1;
+	protected $access = "1";
 
 	public function index(){
 

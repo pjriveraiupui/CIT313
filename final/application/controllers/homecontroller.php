@@ -5,6 +5,7 @@ class HomeController extends Controller{
 	public function index(){
 		$feed = "http://www.nba.com/rss/nba_rss.xml";
 		$rss = new RssDisplay($feed);
+		$this->set('title', 'NBA Playoffs');
 
 		$feed_data = $rss->getFeedItems(8);
 

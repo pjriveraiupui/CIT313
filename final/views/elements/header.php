@@ -66,10 +66,16 @@
                     <?php echo $u->getUserName();?>
                   </a>
                   <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="<?php echo BASE_URL?>members/profile/<?php echo $u->uID?>">My Profile</a>
+                      </li>
                     <?php if($u->isAdmin()) {
                       ?>
                       <li>
-                        <a href="<?php echo BASE_URL?>addpost/">Add Blog Post</a>
+                        <a href="<?php echo BASE_URL?>manageposts/">Manage Posts</a>
+                        <a href="<?php echo BASE_URL?>manageposts/add">Add Posts</a>
+                        <a href="<?php echo BASE_URL?>managecategories/">Manage Categories</a>
+                        <a href="<?php echo BASE_URL?>manageusers/">Manage Users</a>
                       </li>
                       <?php } ?>
                       <li>

@@ -14,14 +14,14 @@
 
   <div class="row">
       <div class="span8">
-        <form action="<?php echo BASE_URL?>manageposts/<?php echo $task?>" method="post" onsubmit="editor.post()">
+        <form action="<?php echo BASE_URL?>manageposts/<?php echo $task?>" method="post" onsubmit="editor.post()" id="addpost">
           <label>Title</label>
           <input type="text" class="span6" name="title" value="<?php echo $title?>" required="title">
 
           <label for="date">Date</label>
           <?php // set timezone
 date_default_timezone_set('America/Indiana/Indianapolis');?>
-          <input name="date" id="date" size="16" type="date" value="<?php echo $date = date('Y-m-d H:i:s'); ?>">
+          <input name="date" id="date" size="16" type="date" value="<?php echo $date = date('Y-m-d H:i:s'); ?>" required="date">
 
           <label for="category">Category</label>
           <select class="input-sm" name="category" id="category" required="category">
@@ -44,8 +44,8 @@ date_default_timezone_set('America/Indiana/Indianapolis');?>
           <label>Content</label>
           <textarea id="tinyeditor" name="content" style="width:556px;height: 200px"><?php echo $content?></textarea>
     			<br/>
-          <input type="hidden" name="pID" value="<?php echo $pID?>"/>
-
+          <input type="hidden" name="pID" value="<?php echo $pID?>" required="content" />
+					
           <button id="submit" type="submit" class="btn btn-primary" >Submit</button>
         </form>
 
@@ -53,4 +53,26 @@ date_default_timezone_set('America/Indiana/Indianapolis');?>
       </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+<script>
+$(document).ready(function () {
+    var validator = $("#addpost").validate({
+        ignore: '',
+        rules: {
+            title: {
+                required: true
+            },
+            date: {
+                required: true
+            },
+            category: {
+                required: true
+            },
+            content: {
+                required: true,
+            }
+        }
+    });
+});
+</script>
 <?php include('views/elements/footer.php');?>

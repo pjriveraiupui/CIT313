@@ -15,4 +15,30 @@
 
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var validator = $("#registration_form").validate({
+            rules: {
+                first_name: {
+                    required: true
+                },
+                last_name: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true
+                },
+                confirm_password: {
+                    equalTo: "#password"
+                }
+            }
+        });
+    });
+</script>
 <?php include('views/elements/footer.php');?>

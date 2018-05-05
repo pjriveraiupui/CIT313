@@ -5,7 +5,7 @@ class Controller {
 	public $data = array();
 
   protected $access;
-  
+
 	function __construct($view, $method = null, $parameters = null){
 		//instantiate the load class
 		$this->view = new View();
@@ -67,7 +67,7 @@ class Controller {
 	/*
 	*The defaultTask() method is the one run if no task method is run. Here as a placeholder for child classes.
 	*/
-	public function defaultTask(){
+	public function index(){
 
 	}
 
